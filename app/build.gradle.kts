@@ -2,8 +2,6 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("org.jetbrains.kotlin.kapt")
-    alias(libs.plugins.google.gms.google.services)
-    alias(libs.plugins.google.firebase.crashlytics)
 }
 
 android {
@@ -75,6 +73,5 @@ dependencies {
 
     //hashing dependency
     implementation("org.mindrot:jbcrypt:0.4")
-    implementation(libs.firebase.crashlytics)
     kapt("androidx.room:room-compiler:2.5.0")
 }
