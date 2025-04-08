@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:visibility="visible"
+    tools:visibility="visible">
+
+    <TextView
+        android:id="@+id/greetingTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="Hello"
+        android:textColor="@color/green_700"
+        android:textSize="24sp"
+        android:layout_centerHorizontal="true" /> <!-- Center horizontally -->
+
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome"
+        android:textSize="24sp"
+        android:padding="16dp"
+        android:textColor="@color/green_700"
+        android:layout_below="@id/greetingTextView" /> <!-- Center horizontally -->
+
+    <TextView
+        android:id="@+id/roleTextView"
+        android:text="Login As:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:padding="16dp"
+        android:textColor="@color/green_700"
+        android:layout_below="@id/welcomeText"/> <!-- Center horizontally -->
+<!--
+    <Button
+        android:id="@+id/hrButton"
+        android:text="HR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/green_700"
+        android:textColor="@color/white"
+        android:layout_below="@id/roleTextView" <
+    android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/supervisorButton"
+        android:text="SUPERVISOR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/green_700"
+        android:textColor="@color/white"
+        android:layout_below="@id/hrButton"
+    android:layout_marginTop="16dp" />
+-->
+</RelativeLayout>

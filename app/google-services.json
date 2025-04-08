@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "798192632974",
+    "project_id": "gichehacasualregistry",
+    "storage_bucket": "gichehacasualregistry.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:798192632974:android:e7846ca3f5077a55d375df",
+        "android_client_info": {
+          "package_name": "com.gichehafarm.registry"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGNkJg6GyZl23gu3QRxrLncE_xvEUSP1g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

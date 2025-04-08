@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.gichehafarm.registry">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <application
+        android:name=".MyApp"
+        android:allowBackup="true"
+        android:label="Gicheha Casual Registry"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        tools:ignore="GoogleAppIndexingWarning"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        <!-- ReportsActivity -->
+        <activity
+            android:name=".ReportsActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme"/>
+
+        <!-- RegisterCasualActivity -->
+        <activity
+            android:name=".RegisterCasualActivity"
+            android:exported="true" />
+
+        <!-- AttendanceActivity -->
+        <activity
+            android:name=".AttendanceActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme"/>
+
+        <!-- MainActivity -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- ViewCasualsActivity -->
+        <activity
+            android:name=".ViewCasualsActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme" />
+
+        <!-- RegisterWorkersActivity -->
+        <activity
+            android:name=".RegisterWorkersActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme" />
+
+        <activity android:name=".LoginActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme"/>
+
+        <activity android:name=".SupervisorActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme"/>
+
+        <activity android:name=".HRActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme" />
+
+        <activity android:name=".RegistrationActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme"/>
+
+        <activity android:name=".HrLoginActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme"/>
+
+        <activity android:name=".MyAccountActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme"/>
+
+        <activity android:name=".PayrollActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme"/>
+
+        <activity android:name=".WorkerLoginActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme"/>
+
+        <activity android:name=".WorkerActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme"/>
+
+        <activity android:name=".RegisterSupervisorsActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme"/>
+
+        <activity android:name=".ViewRegisteredSupervisorsActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme"/>
+
+        <activity android:name=".SupervisorLoginActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme"/>
+
+        <activity android:name=".ViewDaysAttendedActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme"/>
+
+        <receiver android:name=".AttendanceExtractionReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="androidx.work.impl.background.systemalarm.SystemAlarmService"
+            android:enabled="@bool/enable_system_alarm_service_default"
+            android:exported="false" />
+    </application>
+</manifest>
