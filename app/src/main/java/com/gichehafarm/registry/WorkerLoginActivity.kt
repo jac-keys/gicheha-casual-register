@@ -25,10 +25,15 @@ import kotlinx.coroutines.withContext
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Visibility
+import androidx.compose.material.icons.filled.VisibilityOff
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.input.PasswordVisualTransformation
+import androidx.compose.ui.text.input.VisualTransformation
 
 class WorkerLoginActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,6 +55,7 @@ fun WorkerLoginScreen(onLoginSuccess: () -> Unit) {
     var workNumber by remember { mutableStateOf("") }
     var idNumber by remember { mutableStateOf("") }
     var loginError by remember { mutableStateOf<String?>(null) }
+    var idNumberVisible by remember { mutableStateOf(false) }
 
     val context = LocalContext.current
     val keyboardController = LocalSoftwareKeyboardController.current
@@ -90,7 +96,7 @@ fun WorkerLoginScreen(onLoginSuccess: () -> Unit) {
             OutlinedTextField(
                 value = workNumber,
                 onValueChange = { workNumber = it },
-                label = { Text("Work Number") },
+                label = { Text("User name") },
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                 modifier = Modifier
                     .fillMaxWidth()
@@ -101,8 +107,18 @@ fun WorkerLoginScreen(onLoginSuccess: () -> Unit) {
             OutlinedTextField(
                 value = idNumber,
                 onValueChange = { idNumber = it },
-                label = { Text("ID Number") },
+                label = { Text("Password") },
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+                visualTransformation = if (idNumberVisible) VisualTransformation.None else PasswordVisualTransformation(),
+                trailingIcon = {
+                    IconButton(onClick = { idNumberVisible = !idNumberVisible }) {
+                        Icon(
+                            imageVector = if (idNumberVisible) Icons.Filled.Visibility else Icons.Filled.VisibilityOff,
+                            contentDescription = if (idNumberVisible) "Hide password" else "Show password"
+
+                        )
+                    }
+                },
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(vertical = 8.dp)
